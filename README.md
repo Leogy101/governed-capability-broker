@@ -77,7 +77,7 @@ That command checks public evidence arithmetic offline. Repeating live profiling
 
 ## Works Well With
 
-**Knowledge Retrieval Engine (KRE)** is an independent project for local evidence retrieval, exact citations and bounded context. GCB can consume the versioned contract without importing or installing KRE. KRE remains private; no public URL is asserted. See the [interoperability contract](contracts/context/0.1/README.md).
+**[Knowledge Retrieval Engine (KRE)](https://github.com/Leogy101/knowledge-retrieval-engine)** is an independent project for local evidence retrieval, exact citations and bounded context. GCB can consume the versioned contract without importing or installing KRE. See the [interoperability contract](contracts/context/0.1/README.md).
 
 ## Contributing and verification
 
