@@ -1,0 +1,9 @@
+{
+ "metadata_version":"fictional-metadata-1",
+ "provider":{"id":"fictional","name":"GCB fictional offline models"},
+ "backend":{"id":"fictional-local-v1","provider_id":"fictional","api_family":"fixture-native","revision":"1","locality":"local","authorization":"allowed","availability":"ready","endpoint_ref":"bundled-fixture"},
+ "models":[
+  {"id":"forge","native_id":"forge-fixture-1","revision":"1","context_window":4096,"max_output":512,"modalities":["text"],"native_tools":true,"features":["native_tools","error_recovery"],"reasoning":{"semantics":"effort","native_configurations":[{"reasoning_effort":"low"},{"reasoning_effort":"high"}]},"default_native":{"reasoning_effort":"low"},"default_behavior":"An omitted effort selects low in this fictional backend.","source":{"url":"fixture://gcb/fictional-models-v1/forge","title":"Bundled Forge specification, not a real provider","checked_at":"2026-11-14T00:00:00Z"}},
+  {"id":"scribe","native_id":"scribe-fixture-1","revision":"1","context_window":4096,"max_output":512,"modalities":["text"],"native_tools":false,"features":[],"reasoning":{"semantics":"token_budget","native_configurations":[{"thinkingBudget":128},{"thinkingBudget":512}]},"default_native":{"thinkingBudget":128},"default_behavior":"An omitted thinkingBudget selects 128 in this fictional backend.","source":{"url":"fixture://gcb/fictional-models-v1/scribe","title":"Bundled Scribe specification, not a real provider","checked_at":"2026-11-14T00:00:00Z"}}
+ ]
+}

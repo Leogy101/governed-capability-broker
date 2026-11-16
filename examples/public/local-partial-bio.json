@@ -1,0 +1,211 @@
+{
+  "schema": "gcb.public-bio-example/v1",
+  "representation": "curated projection; not an importable runtime inventory",
+  "evidence_kind": "real_local_model",
+  "model": "qwen3.5:9b",
+  "backend": "Ollama /api/chat",
+  "requested_native": {
+    "think": false,
+    "options": {
+      "num_ctx": 4096,
+      "num_predict": 512
+    }
+  },
+  "effective_native": null,
+  "observed_cases": 8,
+  "correct_cases": 7,
+  "completed_attempts": 9,
+  "usage": {
+    "input_tokens": 1609,
+    "output_tokens": 203,
+    "reasoning_tokens": null,
+    "estimated_cost_usd": null,
+    "billed_cost_usd": null
+  },
+  "timing_seconds": {
+    "active_profile_runner": 18.23679166799411,
+    "observed_request_to_completion": 183.421
+  },
+  "cases": [
+    {
+      "case_id": "coding.guard",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "exact_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 9442.984582972713,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 114,
+            "output_tokens": 8,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "review.risks",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "exact_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 623.4466669848189,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 98,
+            "output_tokens": 12,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "research.source-pack",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "exact_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 720.1218750560656,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 138,
+            "output_tokens": 10,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "planning.dependencies",
+      "status": "observed",
+      "correct": false,
+      "evaluation_outcome": "structured_mismatch",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 737.5127919949591,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 88,
+            "output_tokens": 18,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "structured.invoice",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "exact_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 786.1949170473963,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 90,
+            "output_tokens": 18,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "orchestration.choice",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "exact_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 806.3839999958873,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 118,
+            "output_tokens": 17,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "tools.native",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "native_fixture_match",
+      "attempt_count": 1,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 1448.064333992079,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 284,
+            "output_tokens": 26,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "recovery.native",
+      "status": "observed",
+      "correct": true,
+      "evaluation_outcome": "native_fixture_match",
+      "attempt_count": 2,
+      "attempts": [
+        {
+          "status": "completed",
+          "latency_ms": 1467.5985419889912,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 314,
+            "output_tokens": 26,
+            "reasoning_tokens": null
+          }
+        },
+        {
+          "status": "completed",
+          "latency_ms": 2156.7774170544,
+          "usage": {
+            "billed_cost_usd": null,
+            "estimated_cost_usd": null,
+            "input_tokens": 365,
+            "output_tokens": 68,
+            "reasoning_tokens": null
+          }
+        }
+      ]
+    }
+  ],
+  "observed_strengths": [
+    "Matched seven of eight narrow fixtures."
+  ],
+  "observed_weaknesses": [
+    "The planning.dependencies response did not match the frozen required order."
+  ],
+  "uncertainty": "One observation per category; poor performance remains visible and does not remove the model.",
+  "model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+  "server_version": "0.40.15"
+}

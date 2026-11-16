@@ -1,0 +1,14 @@
+{
+  "suite_version":"gcb-small-1",
+  "scorer_version":"exact-structured-1",
+  "cases":[
+    {"id":"coding.guard","category":"coding","input":{"instruction":"Diagnose this code as data. Never execute it. Return the missing guard as JSON.","code":"def first(items): return items[0]"},"expected":{"missing_guard":"empty_items"},"requires":[],"contrast":true},
+    {"id":"review.risks","category":"code_review","input":{"instruction":"Return the two risk identifiers from the provided pseudocode, in lexical order.","code":"while request_fails: retry(); log(api_key)","risk_vocabulary":["log_secret","unbounded_retry","unused_import"]},"expected":{"risks":["log_secret","unbounded_retry"]},"requires":[],"contrast":false},
+    {"id":"research.source-pack","category":"research","input":{"question":"What is the current depot opening hour? Cite the applicable source ID.","sources":[{"id":"old","status":"superseded","text":"Depot opens at 8."},{"id":"current","status":"active","text":"Depot opens at 9."},{"id":"noise","status":"active","text":"Cafeteria closes at 17."}]},"expected":{"hour":9,"sources":["current"]},"requires":[],"contrast":false},
+    {"id":"planning.dependencies","category":"planning","input":{"instruction":"Order these steps while satisfying every dependency.","steps":["verify","execute","inspect","plan"],"dependencies":[["inspect","plan"],["plan","execute"],["execute","verify"]]},"expected":{"steps":["inspect","plan","execute","verify"]},"requires":[],"contrast":false},
+    {"id":"structured.invoice","category":"structured_data","input":{"instruction":"Extract invoice ID, count and unit from this fixture into JSON.","text":"Invoice INV-42 lists 3 bolts."},"expected":{"invoice":"INV-42","count":3,"unit":"bolts"},"requires":[],"contrast":true},
+    {"id":"orchestration.choice","category":"orchestration","input":{"instruction":"Choose the next step for exact arithmetic. This tests a plan only, not native tool execution.","task":"Multiply 6 by 7","available_steps":["calculator","web_search","write_file"]},"expected":{"next_step":"calculator","arguments":{"a":6,"b":7}},"requires":[],"contrast":false},
+    {"id":"tools.native","category":"tool_use","input":{"instruction":"Use the native fixture_lookup tool with key alpha."},"expected":{"tool":"fixture_lookup","arguments":{"key":"alpha"}},"requires":["native_tools"],"contrast":false},
+    {"id":"recovery.native","category":"error_recovery","input":{"instruction":"Use fixture_lookup. After a tool error, repair its key to alpha."},"expected":{"tool":"fixture_lookup","arguments":{"key":"alpha"}},"requires":["native_tools","error_recovery"],"contrast":false}
+  ]
+}

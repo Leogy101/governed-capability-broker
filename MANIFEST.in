@@ -1,0 +1,26 @@
+include README.md pyproject.toml MANIFEST.in CHANGELOG.md CONTRIBUTING.md SECURITY.md THIRD_PARTY_NOTICES.md
+include LICENSE NOTICE
+include PUBLIC_SOURCE.json
+recursive-include src *.py *.json
+recursive-include tests *.py *.mjs *.sql *.json
+exclude tests/test_case_monitor.py
+exclude tests/test_controlled_continuation.py
+exclude tests/test_controlled_runner.py
+exclude tests/test_final_remaining_campaign.py
+exclude tests/test_final_remaining_runner.py
+exclude tests/test_operator_window.py
+exclude tests/test_remaining_campaign.py
+exclude tests/test_remaining_runner.py
+exclude tests/test_resource_policy.py
+exclude tests/test_worker_attribution.py
+recursive-include contracts *.json *.md *.sha256
+recursive-include docs/public *.md *.json
+recursive-include docs/examples/efficiency *.json *.md *.sha256
+recursive-include examples/public *.py *.json *.md
+recursive-include integrations/openclaw-host *.mjs *.json *.md
+recursive-include assets *.svg
+recursive-include release *.py *.txt
+include .github/workflows/ci.yml .gitignore
+prune scripts
+prune docs/verification
+global-exclude __pycache__ *.py[cod] *.sqlite* *.db .DS_Store

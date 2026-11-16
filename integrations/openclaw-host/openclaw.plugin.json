@@ -1,0 +1,102 @@
+{
+  "id": "gcb-openclaw-host",
+  "name": "GCB host profiling",
+  "description": "Explicitly scoped, tool-free Codex completions for the independent GCB profiler.",
+  "enabledByDefault": false,
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "agentId",
+      "authProfileId"
+    ],
+    "properties": {
+      "agentId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "model": {
+        "type": "string",
+        "pattern": "^openai/[A-Za-z0-9][A-Za-z0-9._:-]*$"
+      },
+      "allowedReasoning": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max",
+            "ultra"
+          ]
+        }
+      },
+      "authProfileId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "modelReasoning": {
+        "type": "object",
+        "minProperties": 1,
+        "propertyNames": {
+          "pattern": "^openai/[A-Za-z0-9][A-Za-z0-9._:-]*$"
+        },
+        "additionalProperties": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "xhigh",
+              "max",
+              "ultra"
+            ]
+          }
+        }
+      }
+    },
+    "oneOf": [
+      {
+        "required": [
+          "model",
+          "allowedReasoning"
+        ],
+        "not": {
+          "required": [
+            "modelReasoning"
+          ]
+        }
+      },
+      {
+        "required": [
+          "modelReasoning"
+        ],
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "model"
+              ]
+            },
+            {
+              "required": [
+                "allowedReasoning"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

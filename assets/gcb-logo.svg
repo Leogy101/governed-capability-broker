@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="180" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+  <title id="title">Governed Capability Broker</title>
+  <desc id="desc">GCB wordmark with a branching route symbol.</desc>
+  <rect width="760" height="180" rx="24" fill="#f7fafc"/>
+  <path d="M82 34 132 62v56l-50 28-50-28V62Z" fill="#102d42"/>
+  <path d="M58 90h24m0 0 25-24M82 90l25 24" fill="none" stroke="#55cfad" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="57" cy="90" r="8" fill="#f7fafc"/>
+  <circle cx="108" cy="65" r="8" fill="#55cfad"/>
+  <circle cx="108" cy="115" r="8" fill="#63adf5"/>
+  <text x="162" y="94" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="62" letter-spacing="2" fill="#102d42">GCB</text>
+  <text x="164" y="128" font-family="Arial,Helvetica,sans-serif" font-size="25" fill="#3c576b">Governed Capability Broker</text>
+  <path d="M338 52h364" stroke="#d5e2e8" stroke-width="2"/>
+  <text x="341" y="80" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#46657b">Research · Profile · Preview</text>
+</svg>

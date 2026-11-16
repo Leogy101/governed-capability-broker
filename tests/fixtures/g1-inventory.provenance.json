@@ -1,0 +1,11 @@
+{
+  "source_commit": "0a0cacb81bb7eb916f38a415018d19e2a4f84f9e",
+  "producer": "G1 Inventory + gcb.demo.seed_demo, executed from preserved git archive",
+  "schema_version": 1,
+  "synthetic_only": true,
+  "configurations": [
+    "086631fe9786bbb28a6a225b408dc67ea2b53c04849fa0e34b3074da9274409d",
+    "4c0b71da95f39e993d0119c9a10cad9f75697158dfd6e0ad7b5e9ed896c520c5"
+  ],
+  "sha256": "fc474e0d843e4702cfdb9f294c2d91861cde04b9f3d0e8a1780ef3cc466bb2f8"
+}

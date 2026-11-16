@@ -1,0 +1,131 @@
+{
+  "schema": "gcb.public-bio-example/v1",
+  "representation": "curated projection; not an importable runtime inventory",
+  "evidence_kind": "synthetic_fixture",
+  "model": "forge-fixture-1",
+  "fictional_model": true,
+  "suite_version": "gcb-small-2",
+  "scorer_version": "exact-structured-1",
+  "configurations": [
+    {
+      "native": {
+        "reasoning_effort": "low"
+      },
+      "categories": {
+        "code_review": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "review.risks"
+          ]
+        },
+        "coding": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "coding.guard"
+          ]
+        },
+        "error_recovery": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "recovery.native"
+          ]
+        },
+        "orchestration": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "orchestration.choice"
+          ]
+        },
+        "planning": {
+          "observed": 1,
+          "correct": 0,
+          "case_ids": [
+            "planning.dependencies"
+          ]
+        },
+        "research": {
+          "observed": 1,
+          "correct": 0,
+          "case_ids": [
+            "research.source-pack"
+          ]
+        },
+        "structured_data": {
+          "observed": 1,
+          "correct": 0,
+          "case_ids": [
+            "structured.invoice"
+          ]
+        },
+        "tool_use": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "tools.native"
+          ]
+        }
+      },
+      "strengths": [
+        "code_review: 1/1 exact fixture responses",
+        "coding: 1/1 exact fixture responses",
+        "error_recovery: 1/1 exact fixture responses",
+        "orchestration: 1/1 exact fixture responses",
+        "tool_use: 1/1 exact fixture responses"
+      ],
+      "weaknesses": [
+        "planning: 1/1 fixture responses missed criteria",
+        "research: 1/1 fixture responses missed criteria",
+        "structured_data: 1/1 fixture responses missed criteria"
+      ],
+      "usage": {
+        "billed_cost_usd": null,
+        "estimated_cost_usd": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      }
+    },
+    {
+      "native": {
+        "reasoning_effort": "high"
+      },
+      "categories": {
+        "coding": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "coding.guard"
+          ]
+        },
+        "structured_data": {
+          "observed": 1,
+          "correct": 1,
+          "case_ids": [
+            "structured.invoice"
+          ]
+        }
+      },
+      "strengths": [
+        "coding: 1/1 exact fixture responses",
+        "structured_data: 1/1 exact fixture responses"
+      ],
+      "weaknesses": [],
+      "usage": {
+        "billed_cost_usd": null,
+        "estimated_cost_usd": null,
+        "input_tokens": null,
+        "output_tokens": null,
+        "reasoning_tokens": null
+      }
+    }
+  ],
+  "latency_ms": null,
+  "limitations": [
+    "Fictional model; scripted fixture responses do not measure real model performance.",
+    "Synthetic timing omitted to prevent confusion with provider measurements."
+  ]
+}

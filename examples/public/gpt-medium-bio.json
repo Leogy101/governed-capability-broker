@@ -1,0 +1,86 @@
+{
+  "schema": "gcb.public-bio-example/v1",
+  "representation": "curated projection; not an importable runtime inventory",
+  "evidence_kind": "real_host_model",
+  "model": "openai/gpt-6.1-sol",
+  "backend": "OpenClaw isolated Codex completion",
+  "requested_native": {
+    "reasoning_effort": "medium"
+  },
+  "effective_native": null,
+  "suite_version": "gcb-small-2",
+  "scorer_version": "exact-structured-1",
+  "categories": [
+    {
+      "category": "coding",
+      "case_id": "coding.guard",
+      "correct": true,
+      "input_tokens": 4694,
+      "output_tokens": 28,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4722,
+      "latency_ms": 6418.197999941185
+    },
+    {
+      "category": "code_review",
+      "case_id": "review.risks",
+      "correct": true,
+      "input_tokens": 4680,
+      "output_tokens": 33,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4713,
+      "latency_ms": 5953.630958916619
+    },
+    {
+      "category": "research",
+      "case_id": "research.source-pack",
+      "correct": true,
+      "input_tokens": 4718,
+      "output_tokens": 14,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4732,
+      "latency_ms": 3328.876583953388
+    },
+    {
+      "category": "planning",
+      "case_id": "planning.dependencies",
+      "correct": true,
+      "input_tokens": 4671,
+      "output_tokens": 16,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4687,
+      "latency_ms": 3952.894499991089
+    },
+    {
+      "category": "structured_data",
+      "case_id": "structured.invoice",
+      "correct": true,
+      "input_tokens": 4671,
+      "output_tokens": 42,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4713,
+      "latency_ms": 4418.728166958317
+    },
+    {
+      "category": "orchestration",
+      "case_id": "orchestration.choice",
+      "correct": true,
+      "input_tokens": 4702,
+      "output_tokens": 20,
+      "cache_read_tokens": 2048,
+      "reported_total_tokens": 4722,
+      "latency_ms": 3697.4803749471903
+    }
+  ],
+  "observed_strengths": [
+    "Matched each of six short, exact baseline fixtures."
+  ],
+  "observed_weaknesses": [],
+  "unmeasured": [
+    "Native tool execution/recovery",
+    "Open-web research",
+    "General code generation quality",
+    "Effective reasoning and actual billing"
+  ],
+  "uncertainty": "One sample per category; no universal passing grade or model certification."
+}

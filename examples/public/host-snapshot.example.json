@@ -1,0 +1,11 @@
+{
+  "snapshot_version": 1,
+  "checked_at": "2026-01-01T00:00:00Z",
+  "agent_id": "example-agent",
+  "model_ref": "openai/gpt-example",
+  "openclaw_version": "2026.11.1",
+  "codex_version": "0.169.0-alpha.11.1",
+  "context_window": 32768,
+  "reasoning_settings": ["medium"],
+  "selected_reasoning": "medium"
+}

@@ -1,0 +1,22 @@
+{
+  "plugins": {
+    "entries": {
+      "gcb-openclaw-host": {
+        "enabled": false,
+        "llm": {
+          "allowAgentIdOverride": true,
+          "allowModelOverride": true,
+          "allowAuthProfileOverride": true,
+          "allowedModels": ["openai/gpt-example"],
+          "allowedCompletionModels": ["openai/gpt-example"]
+        },
+        "config": {
+          "agentId": "example-agent",
+          "model": "openai/gpt-example",
+          "allowedReasoning": ["medium"],
+          "authProfileId": "REPLACE_WITH_EXISTING_SUBSCRIPTION_PROFILE_ID"
+        }
+      }
+    }
+  }
+}

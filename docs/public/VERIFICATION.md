@@ -1,0 +1,17 @@
+# Alpha verification status
+
+The source implementation at `95174ac` passed the full internal Python suite: **362 tests on each of Python 3.11.15, 3.13.1 and 3.14.6**, running on macOS arm64. The Node 26.10.0 bridge suite passed **151 tests**. These tests use fake backends and synthetic data, not paid/subscription inference.
+
+The public tree retains **247 core/integration Python tests**, including adapters, unknown-completion protections, authorization denial, native configuration identity, usage accounting, citation/context interoperability and negative paths. The remaining 115 internal tests cover private operator tools that are not distributed; they remain in the private repository. Eight additional release-export tests check explicit allowlisting, no overwrite, path traversal, Git metadata exclusion, symlinks, missing files and adopted-license provenance.
+
+Clean wheel installation, `pip check`, offline demos, Gate 0, standalone imports and uninstall passed without KRE on the three installed Python versions. An installed CLI workflow against a fake loopback Ollama service verified metadata before chat, exact native settings, bounded planning, unauthorized-call rejection, partial observations, cancellation/resumption, bios, evidence, routing and completed-cell reuse. Fake HTTP output is not presented as genuine model performance.
+
+The licensed public staging snapshot passed all 247 public Python tests and eight release-export tests on the same three interpreters, plus all 151 Node bridge tests. These tests ran independently of the private development repository. Prior candidate wheel installation and reconstructed sdist checks passed; the final licensed artifacts require the same checks before publication. The release bundle's separate provenance and checksum records identify the exact tested commit and artifacts without circularly embedding their own hashes in the source. Source distributions include public fixtures, the context contract, optional bridge and tests; private operator tests are excluded.
+
+The installed CLI successfully researched an existing local `qwen3.5:9b` deployment through Ollama 0.40.15 using only `/api/version`, `/api/tags` and `/api/show`. It preserved the installed digest, GGUF/Q4_K_M format and boolean thinking settings/default. No chat, load, unload or inference request was made. Live profiling functionality is supported by the separately retained experiments, not relabeled fake transport results.
+
+Portable host configuration/snapshot templates were checked using fake APIs: metadata research, planning and authorization preflight made zero host completions. The documented deterministic extension example also passed offline. No live Gateway or subscription call was performed during release preparation.
+
+Python 3.12 is unavailable locally. Linux, other architectures and Windows execution have not been validated here. Windows profiling intentionally fails closed. GitHub Actions targets macOS/Linux and Python 3.11–3.14; **the workflow has not run on GitHub**. Prepared matrix entries are not support claims or successful CI results.
+
+An initial internal source-tree test command used relative `PYTHONPATH=src`; two subprocess imports failed after changing working directory. The same complete suite passed using an absolute source path. Installed-wheel tests need no PYTHONPATH. The public instructions install the package before testing.

@@ -1,0 +1,10 @@
+{
+  "name": "gcb-openclaw-host",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "description": "Optional host-owned, subscription-only GCB completion bridge",
+  "openclaw": { "extensions": ["./index.mjs"] },
+  "scripts": { "test": "node --test bridge.test.mjs" }
+}

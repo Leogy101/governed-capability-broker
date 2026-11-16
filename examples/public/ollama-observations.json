@@ -1,0 +1,547 @@
+{
+  "schema": "gcb.public-local-profile-summary/v1",
+  "evidence_kind": "real_local_model",
+  "measured_month": "2026-11",
+  "suite_version": "gcb-small-2",
+  "scorer_version": "exact-structured-1",
+  "models": [
+    {
+      "model": "qwen3.5:9b",
+      "backend": "Ollama /api/chat",
+      "requested_native": {
+        "think": false,
+        "options": {
+          "num_ctx": 4096,
+          "num_predict": 512
+        }
+      },
+      "effective_native": null,
+      "observed_cases": 8,
+      "correct_cases": 7,
+      "completed_attempts": 9,
+      "usage": {
+        "input_tokens": 1609,
+        "output_tokens": 203,
+        "reasoning_tokens": null,
+        "estimated_cost_usd": null,
+        "billed_cost_usd": null
+      },
+      "timing_seconds": {
+        "active_profile_runner": 18.23679166799411,
+        "observed_request_to_completion": 183.421
+      },
+      "cases": [
+        {
+          "case_id": "coding.guard",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "exact_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 9442.984582972713,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 114,
+                "output_tokens": 8,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "review.risks",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "exact_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 623.4466669848189,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 98,
+                "output_tokens": 12,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "research.source-pack",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "exact_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 720.1218750560656,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 138,
+                "output_tokens": 10,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "planning.dependencies",
+          "status": "observed",
+          "correct": false,
+          "evaluation_outcome": "structured_mismatch",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 737.5127919949591,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 88,
+                "output_tokens": 18,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "structured.invoice",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "exact_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 786.1949170473963,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 90,
+                "output_tokens": 18,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "orchestration.choice",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "exact_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 806.3839999958873,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 118,
+                "output_tokens": 17,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "tools.native",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "native_fixture_match",
+          "attempt_count": 1,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 1448.064333992079,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 284,
+                "output_tokens": 26,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        },
+        {
+          "case_id": "recovery.native",
+          "status": "observed",
+          "correct": true,
+          "evaluation_outcome": "native_fixture_match",
+          "attempt_count": 2,
+          "attempts": [
+            {
+              "status": "completed",
+              "latency_ms": 1467.5985419889912,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 314,
+                "output_tokens": 26,
+                "reasoning_tokens": null
+              }
+            },
+            {
+              "status": "completed",
+              "latency_ms": 2156.7774170544,
+              "usage": {
+                "billed_cost_usd": null,
+                "estimated_cost_usd": null,
+                "input_tokens": 365,
+                "output_tokens": 68,
+                "reasoning_tokens": null
+              }
+            }
+          ]
+        }
+      ],
+      "model_digest": "6488c96fa5faab64bb65cbd30d4289e20e6130ef535a93ef9a49f42eda893ea7",
+      "server_version": "0.40.15"
+    },
+    {
+      "model": "qwen3.6:35b-a3b",
+      "model_digest": "0ce5ff81f9ffdf89dd8192ca7b5d34cefd8996a875b3aaaaafaf5c4813569eba",
+      "backend": "Ollama /api/chat",
+      "server_version": "0.40.15",
+      "format": "safetensors",
+      "quantization": "nvfp4",
+      "runner_reported_by_catalog": "mlx",
+      "thinking_metadata": {
+        "default": true,
+        "values": [
+          false,
+          true
+        ]
+      },
+      "configurations": [
+        {
+          "requested_native": {
+            "options": {
+              "num_ctx": 4096,
+              "num_predict": 512
+            },
+            "think": true
+          },
+          "effective_native": null,
+          "attempt_count": 2,
+          "categories": {
+            "coding": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "coding.guard"
+              ]
+            },
+            "structured_data": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "structured.invoice"
+              ]
+            }
+          },
+          "usage": {
+            "input_tokens": 200,
+            "output_tokens": 587,
+            "reasoning_tokens": null,
+            "estimated_cost_usd": null,
+            "billed_cost_usd": null
+          },
+          "latency_ms": {
+            "count": 2,
+            "min": 1650.7531249662861,
+            "max": 4981.9126250222325,
+            "median": 3316.3328749942593
+          },
+          "native_confirmation": "request_only_not_echoed",
+          "billing_provenance": "unknown"
+        },
+        {
+          "requested_native": {
+            "options": {
+              "num_ctx": 4096,
+              "num_predict": 512
+            },
+            "think": false
+          },
+          "effective_native": null,
+          "attempt_count": 9,
+          "categories": {
+            "coding": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 1,
+              "pending": 0,
+              "case_ids": [
+                "coding.guard"
+              ]
+            },
+            "orchestration": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "orchestration.choice"
+              ]
+            },
+            "planning": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "planning.dependencies"
+              ]
+            },
+            "error_recovery": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "recovery.native"
+              ]
+            },
+            "research": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "research.source-pack"
+              ]
+            },
+            "code_review": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 1,
+              "pending": 0,
+              "case_ids": [
+                "review.risks"
+              ]
+            },
+            "structured_data": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "structured.invoice"
+              ]
+            },
+            "tool_use": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "tools.native"
+              ]
+            }
+          },
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "reasoning_tokens": null,
+            "estimated_cost_usd": null,
+            "billed_cost_usd": null
+          },
+          "latency_ms": {
+            "count": 7,
+            "min": 435.2055419003591,
+            "max": 27881.862542009912,
+            "median": 769.2335830070078
+          },
+          "native_confirmation": "request_only_not_echoed",
+          "billing_provenance": "unknown"
+        }
+      ]
+    },
+    {
+      "model": "huihui_ai/Qwen3.6-abliterated:35b-a3b",
+      "model_digest": "7054366dd0af3852ddaeaf54416e0a2fd7660da6e4213fcc5ea556a4446dd31e",
+      "backend": "Ollama /api/chat",
+      "server_version": "0.40.15",
+      "format": "gguf",
+      "quantization": "Q4_K_M",
+      "runner_reported_by_catalog": "ggml",
+      "thinking_metadata": {
+        "default": true,
+        "values": [
+          false,
+          true
+        ]
+      },
+      "configurations": [
+        {
+          "requested_native": {
+            "options": {
+              "num_ctx": 4096,
+              "num_predict": 512
+            },
+            "think": true
+          },
+          "effective_native": null,
+          "attempt_count": 0,
+          "categories": {
+            "coding": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "coding.guard"
+              ]
+            },
+            "structured_data": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "structured.invoice"
+              ]
+            }
+          },
+          "usage": {
+            "input_tokens": null,
+            "output_tokens": null,
+            "reasoning_tokens": null,
+            "estimated_cost_usd": null,
+            "billed_cost_usd": null
+          },
+          "latency_ms": {
+            "count": 0,
+            "min": null,
+            "max": null,
+            "median": null
+          },
+          "native_confirmation": "request_only_not_echoed",
+          "billing_provenance": "unknown"
+        },
+        {
+          "requested_native": {
+            "options": {
+              "num_ctx": 4096,
+              "num_predict": 512
+            },
+            "think": false
+          },
+          "effective_native": null,
+          "attempt_count": 3,
+          "categories": {
+            "coding": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "coding.guard"
+              ]
+            },
+            "orchestration": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "orchestration.choice"
+              ]
+            },
+            "planning": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "planning.dependencies"
+              ]
+            },
+            "error_recovery": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "recovery.native"
+              ]
+            },
+            "research": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "research.source-pack"
+              ]
+            },
+            "code_review": {
+              "observed": 1,
+              "correct": 1,
+              "unknown_completion": 0,
+              "pending": 0,
+              "case_ids": [
+                "review.risks"
+              ]
+            },
+            "structured_data": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "structured.invoice"
+              ]
+            },
+            "tool_use": {
+              "observed": 0,
+              "correct": 0,
+              "unknown_completion": 0,
+              "pending": 1,
+              "case_ids": [
+                "tools.native"
+              ]
+            }
+          },
+          "usage": {
+            "input_tokens": 350,
+            "output_tokens": 49,
+            "reasoning_tokens": null,
+            "estimated_cost_usd": null,
+            "billed_cost_usd": null
+          },
+          "latency_ms": {
+            "count": 3,
+            "min": 511.80879201274365,
+            "max": 28445.109624997713,
+            "median": 704.369124956429
+          },
+          "native_confirmation": "request_only_not_echoed",
+          "billing_provenance": "unknown"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "This is a curated evidence projection, not an importable inventory or complete raw bio.",
+    "Standard Qwen3.6 has two preserved unknown attempts; its full historical usage is unknown. Known completed subtotals must not replace full usage.",
+    "Abliterated Qwen3.6 remains partial: three scored cases and seven untouched cells. No later successful completion is claimed.",
+    "Cold and warm calls, formats and quantization differ; aggregate speed/quality comparisons are uncontrolled.",
+    "Requested 4096 context does not establish 4K effective context or memory allocation in the tested MLX runner.",
+    "No generated code was executed. Native fixture tools were deterministic and harmless.",
+    "Actual operating cost and separate reasoning tokens remain unknown."
+  ]
+}
