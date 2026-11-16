@@ -4,7 +4,7 @@ GCB is an independent Python package. It does not require KRE, a vector database
 
 | Path | Status | Verified boundary |
 |---|---|---|
-| Python core, CLI, inventory/research/bios | Working | Python 3.11+ package; macOS arm64 execution tested. Exact release verification lists the tested interpreter versions. |
+| Python core, CLI, inventory/research/bios | Working | Python 3.11–3.14 offline CI passed on macOS arm64 and Ubuntu x64, including fresh installation. Exact versions and limits are in the verification record. |
 | Deterministic Gate 0 and extensions | Working | Explicit registered operations and policy checks; third-party Python handlers are trusted code, not sandboxed plugins. Unknown operations decline. |
 | Bundled fictional profiler | Working offline | Original Forge/Scribe fixtures; no real model or network required. |
 | Existing local Ollama | Working, selected deployments tested | Loopback metadata and `/api/chat`; tested GGUF and Ollama-managed MLX/safetensors. Positive local artifact identity, supported metadata and native configuration checks remain required. |
@@ -19,7 +19,7 @@ The tested GPT native IDs are `gpt-6.1-sol`, `gpt-6.1-terra`, `gpt-6-astra`, `gp
 
 For local Qwen models, thinking is a native boolean, not invented Low/Medium/High labels. Local model format labels are retained as metadata; GCB invokes the supported Ollama API rather than parsing, converting or downloading model weights. The tested MLX implementation's context behavior differs from GGUF, and selected request limits must not be represented as physical-memory limits.
 
-Profiling uses POSIX process-ownership checks. macOS arm64 is the verified execution platform. Linux and other architectures are unverified until their CI/runtime checks actually run; Windows profiling fails closed while a supported native ownership probe is unavailable. A universal wheel tag does not establish every operating system's execution compatibility.
+Profiling uses POSIX process-ownership checks. macOS arm64 has measured live Ollama and OpenClaw/Codex evidence. [Completed GitHub CI](VERIFICATION.md) covers offline core/profiler behavior, fake adapter paths and wheel installation on macOS arm64 and Ubuntu x64 with Python 3.11–3.14. Live provider execution on Linux has not been independently measured. Other architectures remain unverified; Windows profiling fails closed while a supported native ownership probe is unavailable. A universal wheel tag does not establish every operating system's execution compatibility.
 
 OpenClaw/Codex is optional. Users install and scope the bridge deliberately; it exposes administrator operations, not a broad agent-tool surface. Credentials remain host-managed. A newer SDK document does not prove an older installed runtime supports the same functions. Other versions require compatible contract checks; no automatic fallback to API-key billing is provided.
 

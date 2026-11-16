@@ -1,6 +1,6 @@
 # Contributing
 
-GCB is licensed under [Apache-2.0](LICENSE). Copyright 2026 Brandon Gordon and GCB contributors; see [NOTICE](NOTICE). Submit only work you have the right to contribute under these terms, identify compatible third-party material and preserve its notices. No contributor-agreement service is required. Public repository creation and release publication remain separate operator actions requiring authorization.
+GCB is licensed under [Apache-2.0](LICENSE). Copyright 2026 Brandon Gordon and GCB contributors; see [NOTICE](NOTICE). Submit only work you have the right to contribute under these terms, identify compatible third-party material and preserve its notices. No contributor-agreement service is required.
 
 Keep changes small. Preserve independent installation, research before inference, native reasoning identity, descriptive bios, usage provenance and no uncertain replay. Avoid API-key requirements, silent routing, automatic downloads, unbounded retries and universal certification grades.
 

@@ -6,7 +6,7 @@
 
 GCB is a lightweight Python toolkit for deterministic operations, model capability research, built-in benchmarks and policy-aware routing previews. It works independently, stores observations locally in SQLite and has **no Python runtime dependencies**.
 
-**Alpha candidate `0.3.2a1` — not published.** Apache-2.0 licensing, copyright attribution and the clean public snapshot are approved. Creating the public repository, pushing code and publishing the prerelease still require separate authorization. Private development history is excluded; see the [release plan](docs/public/RELEASE_PLAN.md).
+**Experimental alpha `0.3.2a1`.** The Apache-2.0 [public source](https://github.com/Leogy101/governed-capability-broker) is a curated snapshot; private development history is excluded. Release artifacts must pass the [release verification gates](docs/public/RELEASE_PLAN.md).
 
 Task suitability comes from observed profiles, **not universal model certification**. Weak results remain visible. Unknown usage stays unknown. Native OpenClaw and Hermes routing paths remain **preview-only**: a recommendation does not dispatch or reassign an agent.
 
@@ -27,7 +27,7 @@ See the [architecture](docs/public/ARCHITECTURE.md), [compatibility matrix](docs
 
 ## Five-minute offline quickstart
 
-Requires Python 3.11+; macOS arm64 is verified. No model runtime, credentials or network service is needed for the demo. From the reviewed source checkout:
+Requires Python 3.11+; the offline workflow is verified on macOS arm64 and Ubuntu x64. No model runtime, credentials or network service is needed for the demo. From the reviewed source checkout:
 
 ```sh
 python3 -m venv .venv
@@ -83,4 +83,4 @@ That command checks public evidence arithmetic offline. Repeating live profiling
 
 Licensed under [Apache-2.0](LICENSE). Copyright 2026 Brandon Gordon and GCB contributors. See [NOTICE](NOTICE), [CONTRIBUTING.md](CONTRIBUTING.md), [CHANGELOG.md](CHANGELOG.md), [release notes](docs/public/RELEASE_NOTES.md), [licensing details](docs/public/LICENSING.md) and [third-party attribution](THIRD_PARTY_NOTICES.md).
 
-GitHub Actions is prepared for offline tests and package installation. **It has not run on GitHub.** Locally verified platforms and unverified CI targets are distinguished in the compatibility documentation. No live model calls belong in CI.
+GitHub Actions runs offline tests and package installation; CodeQL checks the source separately. See the [verification record](docs/public/VERIFICATION.md) for actual completed results and platform scope. No live model calls belong in CI.

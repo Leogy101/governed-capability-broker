@@ -10,4 +10,4 @@ Package metadata declares `Apache-2.0` and includes `LICENSE` and `NOTICE` in th
 
 [Third-party attribution](../../THIRD_PARTY_NOTICES.md) identifies build tools, external runtimes and model-weight boundaries. No model weights, provider credentials, subscription rights or product trademarks are relicensed by GCB. Dependencies and external services retain their own terms.
 
-Licensing and the clean-snapshot strategy are approved. **Public repository creation, remote pushes, a GitHub prerelease and package publication are not yet authorized.** The [release plan](RELEASE_PLAN.md) defines the remaining explicit publication gate.
+The [public repository](https://github.com/Leogy101/governed-capability-broker) contains the approved clean snapshot under this license. The [release procedure](RELEASE_PLAN.md) binds published artifacts to verified source and checksums. Provider access, model inference and publication to other package registries are separate operations; this source license does not supply those services or permissions.

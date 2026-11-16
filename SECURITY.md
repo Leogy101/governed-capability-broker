@@ -22,7 +22,7 @@ The ordinary package does not monitor another application's schedules or memory.
 
 ## Disclosure
 
-No public security-reporting channel exists yet. Keep vulnerabilities private and contact the maintainer through the channel that supplied this candidate. The approved target for future publication is `Leogy101/governed-capability-broker`. The publication procedure must enable and verify GitHub private vulnerability reporting before pushing source. Once published with that feature enabled, use the repository's **Security → Report a vulnerability** action. Do not post credentials or private transcripts in public issues. No unverified reporting email address is supplied.
+GitHub private vulnerability reporting is enabled for `Leogy101/governed-capability-broker`. Use [Report a vulnerability](https://github.com/Leogy101/governed-capability-broker/security/advisories/new) or the repository's **Security → Report a vulnerability** action. Keep reports private and include a minimal synthetic reproduction where possible. Do not post credentials or private transcripts in public issues.
 
 ## Publication boundary
 
