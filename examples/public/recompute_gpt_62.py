@@ -39,14 +39,14 @@ def summarize(rows):
     }
 
 
-def verify(document):
+def verify(document, expected_models=MODELS):
     assert document["schema"] == "gcb.public-benchmark-observations/v1"
     assert document["suite_version"] == "gcb-small-2" and document["scorer_version"] == "exact-structured-1"
     assert document["suite_sha256"] == "27e17ed8bcab6d884d4388576e7dabd185c690d3d73435a4386b371698de7d48"
     rows = document["observations"]
     identities = {(row["model"], row["requested_reasoning"], row["case_id"]) for row in rows}
     assert len(identities) == len(rows), "Repeated case/configuration"
-    assert {model["model"] for model in document["models"]} == set(MODELS)
+    assert {model["model"] for model in document["models"]} == set(expected_models)
     expected = set()
     for model in document["models"]:
         model_id = model["model"]

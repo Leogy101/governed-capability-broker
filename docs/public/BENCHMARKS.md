@@ -59,6 +59,22 @@ Each model scored 16/16 on the same `gcb-small-2` cases with the `exact-structur
 
 Both GPT-6.2 models returned fewer output tokens, and higher reported input raised their totals. Cached tokens are included in input. Summed latency includes transport and profiler overhead. Separate runs, fixed order, unequal cache hits, and one observation per case limit the timing comparison. The GPT-6.1 Sol results include one reused Medium coding observation. Effective reasoning effort and reasoning-token counts were unavailable. [Earlier GPT observations](../../examples/public/gpt-observations.json) · [GPT-6.2 follow-up observations](../../examples/public/gpt-6.2-observations.json)
 
+## GPT-6 Luna rerun and five-model comparison
+
+On November 17, 2026, GPT-6 Luna scored 14/14 in a fresh run on OpenClaw **2026.11.1** and Codex **0.169.0-alpha.11.1** on macOS arm64, using the host-managed ChatGPT subscription. The run used the `gcb-small-2` suite and `exact-structured-1` scorer. All 14 host invocations completed and were reconciled against the scored observations. [GPT-6 Luna rerun observations](../../examples/public/gpt-6-luna-rerun-observations.json)
+
+The comparison uses the 14 fixture and requested reasoning pairs present for every model. It includes six Medium fixtures and two fixtures at each of Low, High, Extra High, and Max. The earlier four-model table includes two additional Ultra observations per model. [Earlier GPT observations](../../examples/public/gpt-observations.json) · [GPT-6.2 follow-up observations](../../examples/public/gpt-6.2-observations.json)
+
+| Model | Correct / observed | Host input tokens | Cached input, included | Host output tokens | Host total tokens | Summed observed latency |
+|---|---:|---:|---:|---:|---:|---:|
+| GPT-6 Luna (rerun) | 14/14 | 68,116 | 23,552 | 356 | 68,472 | 56.37 s |
+| GPT-6.1 Sol | 14/14 | 65,596 | 25,216 | 494 | 66,090 | 61.82 s |
+| GPT-6.2 Sol | 14/14 | 70,104 | 9,728 | 305 | 70,409 | 57.96 s |
+| GPT-6 Astra | 14/14 | 65,596 | 0 | 386 | 65,982 | 55.53 s |
+| GPT-6.2 Astra | 14/14 | 70,104 | 34,176 | 291 | 70,395 | 92.43 s |
+
+Luna had the second-lowest observed latency sum and the middle total token count. Its elapsed sum was 0.84 seconds above GPT-6 Astra and 1.59 seconds below GPT-6.2 Sol. Cached tokens are part of host input. Separate runs, fixed order, unequal cache hits, and one observation per fixture and reasoning pair limit timing comparisons. The GPT-6.1 Sol results include one reused Medium coding observation. Effective reasoning effort and billed cost remain unknown.
+
 ## Local Ollama experiments
 
 Local experiments used the existing Ollama API with exact installed tags, researched native thinking values and immutable model identities. No weight conversion or separate MLX inference service was introduced. The tested Qwen3.6 runtime was Ollama **0.40.15**; its GGUF and MLX-backed deployments used the same `/api/chat` adapter.

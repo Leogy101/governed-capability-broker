@@ -56,6 +56,7 @@ examples/public/bridge-config.example.json
 examples/public/gpt-medium-bio.json
 examples/public/gpt-observations.json
 examples/public/gpt-6.2-observations.json
+examples/public/gpt-6-luna-rerun-observations.json
 examples/public/host-snapshot.example.json
 examples/public/local-partial-bio.json
 examples/public/ollama-observations.json

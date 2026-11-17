@@ -3,7 +3,38 @@ from collections import Counter
 import json
 from pathlib import Path
 
-from recompute_gpt_62 import verify as verify_gpt_62
+from recompute_gpt_62 import BASELINE, CONTRAST, summarize, verify
+
+
+def compare_shared_cases(historical, followup, luna):
+    for field in ("suite_version", "suite_sha256", "scorer_version"):
+        assert historical[field] == followup[field] == luna[field]
+    sources = {
+        "gpt-6.1-sol": historical,
+        "gpt-6.2-sol": followup,
+        "gpt-6-astra": historical,
+        "gpt-6.2-astra": followup,
+        "gpt-6-luna": luna,
+    }
+    by_model = {
+        model: {(row["requested_reasoning"], row["case_id"]): row for row in source["observations"]
+                if row["model"] == model and row["status"] == "completed" and row["correct"] is not None}
+        for model, source in sources.items()
+    }
+    shared = set.intersection(*(set(rows) for rows in by_model.values()))
+    efforts = ("low", "medium", "high", "xhigh", "max")
+    expected = {(effort, case) for effort in efforts for case in (BASELINE if effort == "medium" else CONTRAST)}
+    assert len(shared) == 14 and shared == expected, "Shared case coverage changed"
+
+    results = []
+    for model, rows in by_model.items():
+        summary = summarize([row for key, row in rows.items() if key in shared])
+        assert summary["observed_cases"] == len(shared)
+        assert all(value is not None for value in summary["usage"].values())
+        assert summary["observed_latency_seconds"] is not None
+        results.append({"model": model, "correct": summary["correct_cases"], **summary["usage"],
+                        "observed_latency_seconds": summary["observed_latency_seconds"]})
+    return {"shared_cases": len(shared), "requested_reasoning_settings": list(efforts), "models": results}
 
 
 def main():
@@ -76,13 +107,18 @@ def main():
                 assert config["usage"]["output_tokens"] is None
         local_summaries.append({"model": model["model"], "observed": values[0], "correct": values[1],
                                 "unknown": values[2], "pending": values[3], "attempts": attempts})
-    followup_file = Path(__file__).with_name("gpt-6.2-observations.json")
-    followup = verify_gpt_62(json.loads(followup_file.read_text()))
+    followup = json.loads(Path(__file__).with_name("gpt-6.2-observations.json").read_text())
+    luna = json.loads(Path(__file__).with_name("gpt-6-luna-rerun-observations.json").read_text())
+    followup_check = verify(followup)
+    luna_check = verify(luna, expected_models=("gpt-6-luna",))
+    comparison = compare_shared_cases(evidence, followup, luna)
     print(json.dumps({"checks": "passed", "models": models, "total": totals(rows),
                       "new_calls_only": evidence["totals_new_observations"],
                       "matched_two_case_contrasts": pairs,
                       "local_profiles": local_summaries,
-                      "gpt_6_2_followup": followup,
+                      "gpt_6_2_followup": followup_check,
+                      "gpt_6_luna_rerun": luna_check,
+                      "five_model_comparison": comparison,
                       "billing_and_underlying_request_counts": "unknown"}, indent=2))
 
 
