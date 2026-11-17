@@ -3,6 +3,8 @@ from collections import Counter
 import json
 from pathlib import Path
 
+from recompute_gpt_62 import verify as verify_gpt_62
+
 
 def main():
     evidence = json.loads(Path(__file__).with_name("gpt-observations.json").read_text())
@@ -74,10 +76,13 @@ def main():
                 assert config["usage"]["output_tokens"] is None
         local_summaries.append({"model": model["model"], "observed": values[0], "correct": values[1],
                                 "unknown": values[2], "pending": values[3], "attempts": attempts})
+    followup_file = Path(__file__).with_name("gpt-6.2-observations.json")
+    followup = verify_gpt_62(json.loads(followup_file.read_text()))
     print(json.dumps({"checks": "passed", "models": models, "total": totals(rows),
                       "new_calls_only": evidence["totals_new_observations"],
                       "matched_two_case_contrasts": pairs,
                       "local_profiles": local_summaries,
+                      "gpt_6_2_followup": followup,
                       "billing_and_underlying_request_counts": "unknown"}, indent=2))
 
 

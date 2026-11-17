@@ -55,10 +55,12 @@ examples/public/README.md
 examples/public/bridge-config.example.json
 examples/public/gpt-medium-bio.json
 examples/public/gpt-observations.json
+examples/public/gpt-6.2-observations.json
 examples/public/host-snapshot.example.json
 examples/public/local-partial-bio.json
 examples/public/ollama-observations.json
 examples/public/recompute.py
+examples/public/recompute_gpt_62.py
 examples/public/synthetic-bio.json
 integrations/openclaw-host/README.md
 integrations/openclaw-host/bridge.mjs

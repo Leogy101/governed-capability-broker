@@ -30,6 +30,17 @@ New active profiling totaled **376.403 seconds**. The campaign elapsed interval 
 
 Host input/output/cache coverage is complete for these observations. Underlying provider requests/retries, reasoning-token counts, full host-augmented prompt bytes, actual charges and effective reasoning remain unknown. An unclassified host cost value of zero is not a billed-zero measurement. Subscription usage is not interchangeable with API pricing, and no cost-saving claim follows.
 
+## GPT-6.2 follow-up
+
+On November 17, 2026, GCB profiled GPT-6.2 Sol and GPT-6.2 Astra through OpenClaw **2026.11.1** and Codex **0.169.0-alpha.11.1** using host-managed ChatGPT subscription authentication on macOS arm64. Each Medium baseline used the six `gcb-small-2` text fixtures. Other tested settings used the same two coding and structured-extraction contrasts, scored by `exact-structured-1`. The jobs ran sequentially, with a 60-second best-effort deadline and an advisory 512-token output hint. Native-tool execution and recovery were inapplicable to the isolated interface.
+
+| Model | Requested reasoning settings | Correct / scored / applicable | Host input tokens | Host output tokens | Cached input, included | Host total tokens | Observed latency sum |
+|---|---|---:|---:|---:|---:|---:|---:|
+| GPT-6.2 Sol | low, medium, high, xhigh, max, ultra | 16 / 16 / 16 | 80,113 | 336 | 14,464 | 80,449 | 64.60 s |
+| GPT-6.2 Astra | low, medium, high, xhigh, max, ultra | 16 / 16 / 16 | 80,113 | 322 | 43,904 | 80,435 | 102.24 s |
+
+32 host invocations were recorded. All applicable cases were scored. Cached input is included in host input. Requested reasoning effort was recorded. Effective effort, provider request counts and billed cost were unknown. There was at most one sample per model, setting and case. Fixed order and unequal cache hits limit latency comparisons. See the [public observations and offline arithmetic check](../../examples/public/README.md).
+
 ## Local Ollama experiments
 
 Local experiments used the existing Ollama API with exact installed tags, researched native thinking values and immutable model identities. No weight conversion or separate MLX inference service was introduced. The tested Qwen3.6 runtime was Ollama **0.40.15**; its GGUF and MLX-backed deployments used the same `/api/chat` adapter.
