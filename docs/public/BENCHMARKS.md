@@ -41,6 +41,24 @@ On November 17, 2026, GCB profiled GPT-6.2 Sol and GPT-6.2 Astra through OpenCla
 
 32 host invocations were recorded. All applicable cases were scored. Cached input is included in host input. Requested reasoning effort was recorded. Effective effort, provider request counts and billed cost were unknown. There was at most one sample per model, setting and case. Fixed order and unequal cache hits limit latency comparisons. See the [public observations and offline arithmetic check](../../examples/public/README.md).
 
+## Four-model GPT comparison
+
+Each model scored 16/16 on the same `gcb-small-2` cases with the `exact-structured-1` scorer. The matched set covers six cases at Medium and two cases each at Low, High, Extra High, Max, and Ultra.
+
+| Model | Correct / observed | Host input tokens | Cached input, included | Host output tokens | Host total tokens | Summed observed latency |
+|---|---:|---:|---:|---:|---:|---:|
+| GPT-6.1 Sol | 16/16 | 74,961 | 27,264 | 545 | 75,506 | 69.92 s |
+| GPT-6.2 Sol | 16/16 | 80,113 | 14,464 | 336 | 80,449 | 64.60 s |
+| GPT-6 Astra | 16/16 | 74,961 | 8,832 | 438 | 75,399 | 63.96 s |
+| GPT-6.2 Astra | 16/16 | 80,113 | 43,904 | 322 | 80,435 | 102.24 s |
+
+| Comparison | Host input change | Host output change | Host total change | Summed latency change |
+|---|---:|---:|---:|---:|
+| GPT-6.2 Sol vs GPT-6.1 Sol | +5,152 (+6.9%) | −209 (−38.3%) | +4,943 (+6.5%) | −5.33 s (−7.6%) |
+| GPT-6.2 Astra vs GPT-6 Astra | +5,152 (+6.9%) | −116 (−26.5%) | +5,036 (+6.7%) | +38.28 s (+59.8%) |
+
+Both GPT-6.2 models returned fewer output tokens, and higher reported input raised their totals. Cached tokens are included in input. Summed latency includes transport and profiler overhead. Separate runs, fixed order, unequal cache hits, and one observation per case limit the timing comparison. The GPT-6.1 Sol results include one reused Medium coding observation. Effective reasoning effort and reasoning-token counts were unavailable. [Earlier GPT observations](../../examples/public/gpt-observations.json) · [GPT-6.2 follow-up observations](../../examples/public/gpt-6.2-observations.json)
+
 ## Local Ollama experiments
 
 Local experiments used the existing Ollama API with exact installed tags, researched native thinking values and immutable model identities. No weight conversion or separate MLX inference service was introduced. The tested Qwen3.6 runtime was Ollama **0.40.15**; its GGUF and MLX-backed deployments used the same `/api/chat` adapter.
